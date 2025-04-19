@@ -11,24 +11,28 @@ const roboto = Roboto({
 
 export default function Home() {
   return (
-    <div className="bg-white">
-    <Header/>
+    <div className="relative bg-white min-h-screen overflow-hidden">
+      <Header />
 
-      <WavyBackground className="max-w-4xl mx-auto pb-40">
-        <h1 className="text-2xl md:text-4xl lg:text-7xl font-bold inter-var text-center">
+      <WavyBackground className="max-w-4xl mx-auto pb-40 flex flex-col items-center">
+        <h1 className="transform -translate-y-1/2 w-xl text-2xl md:text-4xl lg:text-7xl font-bold inter-var text-center text-orange-600">
           Coming Soon
         </h1>
         <p className="text-base md:text-lg mt-4 text-black font-normal inter-var text-center">
-        We're working on something awesome. Stay tuned!
+          We're working on something awesome. Stay tuned!
         </p>
-        <Image
-          width={200}
-          height={400}
-          src="/Glass.png"
-          alt="Glass"
-          className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/5 w-300 z-20"
-        />
       </WavyBackground>
+
+      {/* Image outside the wavy div, positioned at bottom */}
+      <Image
+        width={400}
+        height={300} // or whatever fits your image’s aspect ratio
+        src="/Glass.png"
+        alt="Glass"
+        className="fixed top-90 bottom-0 left-1/2 transform -translate-x-1/2 z-20"
+      />
+
     </div>
   );
 }
+
